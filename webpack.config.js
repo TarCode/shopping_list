@@ -3,8 +3,8 @@ var webpack = require('webpack');
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: './dist'
-    filename: 'bundle.js',
+    path: './dist',
+    filen: 'bundle.js',
     publicPath: '/'
   },
   devServer: {
