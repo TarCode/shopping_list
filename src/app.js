@@ -1,4 +1,6 @@
 import React from 'react';
+import { Router, Route, Link, browserHistory } from 'react-router';
+import Home from './components/home';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -7,7 +9,9 @@ export default class App extends React.Component {
 
   render() {
     return(
-      <h2>Hello Monkey</h2>
+      <Router history={ browserHistory }>
+        <Route path='/' component={ Home }/>
+      </Router>
     )
   }
 }
