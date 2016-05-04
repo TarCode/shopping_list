@@ -3,13 +3,13 @@ var webpack = require('webpack');
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: './dist',
-    filen: 'bundle.js',
+    path: './',
+    filename: 'bundle.js',
     publicPath: '/'
   },
   devServer: {
     inline: true,
-    contentBase: './dist',
+    contentBase: './',
     historyApiFallback: true
   },
   module: {
