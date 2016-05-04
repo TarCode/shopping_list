@@ -1,5 +1,6 @@
 import React from 'react';
-import { Router, Route, Link, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import Template from './components/template';
 import Home from './components/home';
 import ShoppingList from './components/shopping_list';
 
@@ -11,8 +12,10 @@ export default class App extends React.Component {
   render() {
     return(
       <Router history={ browserHistory }>
-        <Route path='/' component={ Home }/>
-        <Route path='/shopping_list' component={ ShoppingList }/>
+        <Route path='/' component={ Template }>
+          <IndexRoute component={ Home }/>
+          <Route path='/shopping_list' component={ ShoppingList }/>
+        </Route>
       </Router>
     )
   }

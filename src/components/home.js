@@ -7,9 +7,16 @@ export default class Home extends React.Component {
   }
   render() {
     return(
-      <div>
-        <h2>Home</h2>
-        <Link to='/shopping_list'>Shopping List</Link>
+      <div className='home center'>
+        <h2 className='title'>
+          GROCEREMEMBER
+          <br/>
+          <small>Never forget your groceries again!</small>
+        </h2>
+        <Link className='btn red' to='/shopping_list'>Launch</Link>
+        <div>
+        <br/>
+        </div>
       </div>
     )
   }
