@@ -6,9 +6,13 @@ export default class Home extends React.Component {
     super(props);
   }
   render() {
+    var titleStyle = {
+      marginTop: '15%'
+    }
     return(
       <div className='home center'>
-        <h2 className='title'>
+        <br/>
+          <h2 style={ titleStyle } className='title'>
           GROCEREMEMBER
           <br/>
           <small>Never forget your groceries again!</small>

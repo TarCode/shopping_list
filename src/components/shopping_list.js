@@ -26,37 +26,39 @@ export default class ShoppingList extends React.Component {
     var shopping_list_items = this.state.shopping_list.map(function(item, index) {
       return(
         <tr key={ index }>
-          <td>{ item.item }</td>
-          <td>{ item.price }</td>
+          <td className='center'>{ item.item }</td>
+          <td className='center'>{ item.price }</td>
         </tr>
       )
     }.bind(this));
     return(
       <div className='container'>
-        <div className="row ">
-          <div className="input-field col s5">
-            <input placeholder='Item' id="item" type="text" className="validate"/>
+        <div className='container'>
+            <div className="row ">
+              <div className="input-field col s5">
+                <input placeholder='Item' id="item" type="text" className="validate"/>
+              </div>
+              <div className="input-field col s5">
+                <input placeholder='price' id="price" type="number" className="validate"/>
+              </div>
+              <div className="input-field col s1">
+                <button onClick={ this.addItem } className='btn btn-large red'>+</button>
+              </div>
+            </div>
+            <hr/>
+            <table className='table card yellow lighten-2'>
+              <thead>
+                <tr id='item_row'>
+                  <th className='center'>Item</th>
+                  <th className='center'>Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                { shopping_list_items }
+              </tbody>
+            </table>
+            <h3 className='right'>Total: <strong>{ this.state.total }</strong></h3>
           </div>
-          <div className="input-field col s5">
-            <input placeholder='price' id="price" type="number" className="validate"/>
-          </div>
-          <div className="input-field col s2">
-            <button onClick={ this.addItem } className='btn btn-floating red'>+</button>
-          </div>
-        </div>
-        <hr/>
-        <table className='table card yellow lighten-2'>
-          <thead>
-            <tr id='item_row'>
-              <th>Item</th>
-              <th>Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            { shopping_list_items }
-          </tbody>
-        </table>
-        <h3 className='right'>Total: { this.state.total }</h3>
       </div>
     )
   }
